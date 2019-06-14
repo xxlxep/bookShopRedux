@@ -1,7 +1,13 @@
 import React from 'react';
 import BookList from '../components/book-list';
-const HomePage = () => {
+import ShoppingCartTable from '../components/shopping-cart-table';
 
-  return <BookList />;
+const HomePage = () => {
+  return (
+    <div>
+      <BookList />
+      <ShoppingCartTable />
+    </div>
+  );
 };
 export default HomePage;
