@@ -1,3 +1,5 @@
+import { reject } from "q";
+
 export default class bookstoreService {
   data = [
     {
@@ -18,9 +20,13 @@ export default class bookstoreService {
     },
   ];
   getBooks() {
-    return new Promise(resolve => {
+    return new Promise((resolve,reject) => {
       setTimeout(() => {
-        resolve(this.data);
+        if (Math.random() > 0.75) {
+          reject(new Error('Something bad happend!'))
+        } else {
+          resolve(this.data);
+        }
       }, 700);
     });
   }
